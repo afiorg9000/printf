@@ -12,7 +12,7 @@ int print_charmod(int character, int length);
 
 int print_stringmod(char *string, int length);
 
-int print_nummod(int number, int length);
+int print_numod(int number);
 
 int print_percent(int percent, int length);
 
