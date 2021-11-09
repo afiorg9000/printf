@@ -50,18 +50,21 @@ int print_charmod(int character, int length)
 int print_numod(int number)
 {
 	int length = 1;
-
+	unsigned int num;
 	if (number < 0)
 	{
+		num = number;
 		_putchar('-');
 		length++;
-		number = -number;
+		num = num * (-1);
 	}
+	else
+		num = number;
 
-	if (number > 9)
-		length += print_numod(number / 10);
+	if (num > 9)
+		length += print_numod(num / 10);
 
-	_putchar((number % 10) + '0');
+	_putchar((num % 10) + '0');
 	return (length);
 }
 
