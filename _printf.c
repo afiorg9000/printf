@@ -31,17 +31,26 @@ int _printf(const char *format, ...)
 			{
 				len += print_stringmod(va_arg(fmt, char *), 0);
 			}
-			if (format[n] == 'c')
+			else if (format[n] == 'c')
 				len += print_charmod(va_arg(fmt, int), 0);
-			if (format[n] == 'd' || format[n] == 'i')
+			else if (format[n] == 'd' || format[n] == 'i')
 				len += print_numod(va_arg(fmt, int));
-			if (format[n] == '%')
-				len += print_percent('%', 0);
+			else if (format[n] == '%')
+			  len += print_percent('%', 0);
+			else
+			{
+				_putchar('%');
+				_putchar(format[--n]);
+				len++;
+			}
 		}
 		else
 		{
-			_putchar(format[n]);
-			len++;
+			if(format[n] != '%')
+			{
+				_putchar(format[n]);
+				len++;
+			}
 		}
 	}
 	va_end(fmt);
