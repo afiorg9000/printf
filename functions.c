@@ -20,7 +20,7 @@ int print_stringmod(char *string, int length)
 
 	for (x = 0; string[x] != '\0'; x++)
 	{
-		putchar(string[x]);
+		_putchar(string[x]);
 		length++;
 	}
 	return (length);
@@ -35,7 +35,7 @@ int print_stringmod(char *string, int length)
 
 int print_charmod(int character, int length)
 {
-	putchar(character);
+	_putchar(character);
 	length++;
 
 	return (length);
@@ -53,7 +53,7 @@ int print_numod(int number)
 
 	if (number < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		length++;
 		number = -number;
 	}
@@ -61,7 +61,7 @@ int print_numod(int number)
 	if (number > 9)
 		length += print_numod(number / 10);
 
-	putchar((number % 10) + '0');
+	_putchar((number % 10) + '0');
 	return (length);
 }
 
@@ -74,7 +74,7 @@ int print_numod(int number)
 
 int print_percent(int percent, int length)
 {
-	putchar(percent);
+	_putchar(percent);
 	length++;
 	return (length);
 }

@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - function that prints string.
  * @format: points to a character string that cant be
@@ -15,26 +14,35 @@ int _printf(const char *format, ...)
 	int len = 0;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	va_start(fmt, format);
+	if (fmt == NULL)
+		return (-1);
 	for (n = 0; format[n] != '\0'; n++)
 	{
-		if (format[n] == '%')
+		if (format[n] == '%' && format[n + 1] != '\0')
 		{
-			if (format[n + 1] == 's')
+			++n;
+			if (format[n] == ' ')
+			{
+				for(; format[n] == ' ' && format[n] != '\0'; n++)
+					;
+			}
+			if (format[n] == 's')
+			{
 				len += print_stringmod(va_arg(fmt, char *), 0);
-			else if (format[n + 1] == 'c')
+			}
+			if (format[n] == 'c')
 				len += print_charmod(va_arg(fmt, int), 0);
-			else if (format[n + 1] == 'd' || format[n + 1] == 'i')
+			if (format[n] == 'd' || format[n] == 'i')
 				len += print_numod(va_arg(fmt, int));
-			else if (format[n + 1] == '%')
+			if (format[n] == '%')
 				len += print_percent('%', 0);
-			n++;
 		}
 		else
 		{
-			putchar(format[n]);
+			_putchar(format[n]);
 			len++;
 		}
 	}
