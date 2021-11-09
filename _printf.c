@@ -13,12 +13,10 @@ int _printf(const char *format, ...)
 	va_list fmt;
 	int len = 0;
 
-	if (format == NULL)
+	if (format == NULL || fmt == NULL)
 		return (-1);
 
 	va_start(fmt, format);
-	if (fmt == NULL)
-		return (-1);
 	for (n = 0; format[n] != '\0'; n++)
 	{
 		if (format[n] == '%' && format[n + 1] != '\0')
