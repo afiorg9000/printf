@@ -13,6 +13,11 @@ int print_stringmod(char *string, int length)
 
 	length = 0;
 
+	if (string == NULL)
+	{
+		string = "(null)";
+	}
+
 	for (x = 0; string[x] != '\0'; x++)
 	{
 		putchar(string[x]);

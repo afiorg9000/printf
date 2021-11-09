@@ -10,6 +10,7 @@ int main(void)
 {
 	int len;
 	int len2;
+	char *s = NULL;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -25,5 +26,7 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf("Null type format spec example: [%s]\n", s);
+	printf("[%s]\n", s);
 	return (0);
 }
