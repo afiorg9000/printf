@@ -26,7 +26,8 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	_printf("Null type format spec example: [%s]\n", s);
-	printf("[%s]\n", s);
+	len = _printf("Null type format spec example: [%s]\n", s);
+	len2 = printf("Null type format spec example: [%s]\n", s);
+	printf("len: %d len2: %d\n", len, len2);
 	return (0);
 }
