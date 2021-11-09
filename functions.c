@@ -51,6 +51,7 @@ int print_numod(int number)
 {
 	int length = 1;
 	unsigned int num;
+
 	if (number < 0)
 	{
 		num = number;
