@@ -38,5 +38,6 @@ int _printf(const char *format, ...)
 			len++;
 		}
 	}
+	va_end(fmt);
 	return (len);
 }
