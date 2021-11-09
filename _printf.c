@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			++n;
 			if (format[n] == ' ')
 			{
-				for(; format[n] == ' ' && format[n] != '\0'; n++)
+				for (; format[n] == ' ' && format[n] != '\0'; n++)
 					;
 			}
 			if (format[n] == 's')
