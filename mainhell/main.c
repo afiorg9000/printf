@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * main - Entry point
@@ -37,6 +38,9 @@ int main(void)
 	len2 = printf("String & char: [%s], [%c]\n", "Hello", 'D');
 	printf("len: %d len2: %d\n", len, len2);
 
+	len = _printf("int max %d, int min %d\n", INT_MAX, INT_MIN);
+	len2 = printf("int max %d, int min %d\n", INT_MAX, INT_MIN);
+	printf("len: %d len2: %d\n", len, len2);
 
 	return (0);
 }
