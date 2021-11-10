@@ -33,11 +33,11 @@ int main(void)
 	len1 = _printf("%   w\n");
 	len2 = printf("%   w\n");
 	printf("_printf return:%i printf return:%i\n", len1, len2);
-	
+
 	len1 = _printf("%   s\n", "funciona pls");
 	len2 = printf("%    s\n", "funciona pls");
 	printf("_printf return:%i printf return:%i\n", len1, len2);
-	
+
 	len1 = _printf("%s\n", s);
 	len2 = printf("%s\n", s);
 	printf("_printf return:%i printf return:%i\n", len1, len2);
@@ -45,7 +45,7 @@ int main(void)
 	len1 = _printf("%!\n");
 	len2 = printf("%!\n");
 	printf("_printf return: %i printf return: %i\n", len1, len2);
-	
+
 	len1 = _printf("%\n");
 	len2 = printf("%\n");
 	printf("_printf return: %i printf return: %i\n", len1, len2);
